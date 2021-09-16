@@ -22,7 +22,6 @@ run = async () => {
     let influxdb = await connectInfluxDB();
     new RaspiTempMonitor(influxdb).run();
     new FritzboxMonitor(influxdb).run();
-
 };
 
 run();
