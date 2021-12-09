@@ -7,15 +7,19 @@ const VeitsbronnTempMonitor = require('./lib/monitor/veitsbronntemp-monitor');
 const PingMonitor = require('./lib/monitor/ping-monitor');
 const InfluxDBHandler = require('./lib/handler/influxdb-handler');
 const MQTTHander = require('./lib/handler/mqtt-handler');
+const CPUMonitor = require('./lib/monitor/cpu-monitor');
 
 run = async () => {
     const influxDBHandler = new InfluxDBHandler();
     const mqttHandler = new MQTTHander();
-
+    /*
     new FritzboxMonitor([influxDBHandler, mqttHandler]).run();
     new RaspiTempMonitor([influxDBHandler, mqttHandler]).run();
     new VeitsbronnTempMonitor([influxDBHandler, mqttHandler]).run();
     new PingMonitor([influxDBHandler, mqttHandler]).run();
+    */
+
+    new CPUMonitor([influxDBHandler, mqttHandler]).run();
 };
 
 run();
