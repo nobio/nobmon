@@ -12,14 +12,12 @@ const CPUMonitor = require('./lib/monitor/cpu-monitor');
 run = async () => {
     const influxDBHandler = new InfluxDBHandler();
     const mqttHandler = new MQTTHander();
-    /*
+    
     new FritzboxMonitor([influxDBHandler, mqttHandler]).run();
     new RaspiTempMonitor([influxDBHandler, mqttHandler]).run();
     new VeitsbronnTempMonitor([influxDBHandler, mqttHandler]).run();
     new PingMonitor([influxDBHandler, mqttHandler]).run();
-    */
-
-    new CPUMonitor([influxDBHandler, mqttHandler]).run();
+    //new CPUMonitor([influxDBHandler, mqttHandler]).run();
 };
 
 run();
