@@ -17,7 +17,7 @@ run = async () => {
     new RaspiTempMonitor([influxDBHandler, mqttHandler]).run();
     new VeitsbronnTempMonitor([influxDBHandler, mqttHandler]).run();
     new PingMonitor([influxDBHandler, mqttHandler]).run();
-    //new CPUMonitor([influxDBHandler, mqttHandler]).run();
+    new CPUMonitor([influxDBHandler, mqttHandler]).run();
 };
 
 run();
