@@ -5,7 +5,7 @@
     "private": true,
     "scripts": {
         "start": "node index",
-        "serve": "node_modules/nodemon/bin/nodemon.js"
+        "start:dev": "node_modules/nodemon/bin/nodemon.js"
     },
     "devDependencies": {
         "nodemon": "^2.0.6"
