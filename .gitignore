@@ -17,4 +17,4 @@ results
 .env
 npm-debug.log
 node_modules
-docker-compose.yml
+docker-compose.yaml
