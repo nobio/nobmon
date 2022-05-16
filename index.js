@@ -13,8 +13,8 @@ const MemoryMonitor = require('./lib/monitor/mem-monitor');
 
 run = async () => {
     const influxDBHandler = new InfluxDBHandler();
-    // const mqttHandler = new MQTTHander();
-    const mqttHandler = new NOPHander();
+    const mqttHandler = new MQTTHander();
+    //const mqttHandler = new NOPHander();
 
     new FritzboxMonitor([influxDBHandler, mqttHandler]).run();
     new RaspiTempMonitor([influxDBHandler, mqttHandler]).run();
