@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:16-alpine
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -8,6 +8,7 @@ COPY package.json ./
 
 # install dependencies (but only those needed for production)
 RUN npm install --only=production
+RUN npm prune --production
 
 # Bundle app source
 COPY . .
