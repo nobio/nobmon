@@ -16,12 +16,21 @@ run = async () => {
     const mqttHandler = new MQTTHander();
     //const mqttHandler = new NOPHander();
 
-    new FritzboxMonitor([influxDBHandler, mqttHandler]).run();
-    new RaspiTempMonitor([influxDBHandler, mqttHandler]).run();
-    new VeitsbronnWeatherMonitor([influxDBHandler, mqttHandler]).run();
-    new PingMonitor([influxDBHandler, mqttHandler]).run();
-    new CPUMonitor([influxDBHandler, mqttHandler]).run();
-    new MemoryMonitor([influxDBHandler, mqttHandler]).run();
+    console.table([
+        ['FRITZBOX MONITOR', process.env.FRITZBOX_MONITOR],
+        ['RASPITEMP MONITOR', process.env.RASPITEMP_MONITOR],
+        ['VEITSBRONNWEATHER MONITOR', process.env.VEITSBRONNWEATHER_MONITOR],
+        ['PING MONITOR', process.env.PING_MONITOR],
+        ['CPU MONITOR', process.env.CPU_MONITOR],
+        ['MEMORY MONITOR', process.env.MEMORY_MONITOR],
+    ]);
+
+    if (process.env.FRITZBOX_MONITOR === 'true') new FritzboxMonitor([influxDBHandler, mqttHandler]).run();
+    if (process.env.RASPITEMP_MONITOR === 'true') new RaspiTempMonitor([influxDBHandler, mqttHandler]).run();
+    if (process.env.VEITSBRONNWEATHER_MONITOR === 'true') new VeitsbronnWeatherMonitor([influxDBHandler, mqttHandler]).run();
+    if (process.env.PING_MONITOR === 'true') new PingMonitor([influxDBHandler, mqttHandler]).run();
+    if (process.env.CPUM_ONITOR === 'true') new CPUMonitor([influxDBHandler, mqttHandler]).run();
+    if (process.env.MEMORY_MONITOR === 'true') new MemoryMonitor([influxDBHandler, mqttHandler]).run();
 };
 
 run();
