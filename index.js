@@ -29,7 +29,7 @@ run = async () => {
     if (process.env.RASPITEMP_MONITOR === 'true') new RaspiTempMonitor([influxDBHandler, mqttHandler]).run();
     if (process.env.VEITSBRONNWEATHER_MONITOR === 'true') new VeitsbronnWeatherMonitor([influxDBHandler, mqttHandler]).run();
     if (process.env.PING_MONITOR === 'true') new PingMonitor([influxDBHandler, mqttHandler]).run();
-    if (process.env.CPUM_ONITOR === 'true') new CPUMonitor([influxDBHandler, mqttHandler]).run();
+    if (process.env.CPU_MONITOR === 'true') new CPUMonitor([influxDBHandler, mqttHandler]).run();
     if (process.env.MEMORY_MONITOR === 'true') new MemoryMonitor([influxDBHandler, mqttHandler]).run();
 };
 
