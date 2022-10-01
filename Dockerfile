@@ -4,9 +4,6 @@ FROM node:16
 # Create app directory
 WORKDIR /usr/src/app
 
-# install nmap
-RUN sudo apt install nmap
-
 # take the package.json only
 COPY package.json ./
 
