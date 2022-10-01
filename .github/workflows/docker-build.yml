@@ -26,8 +26,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: apt update; apt upgrade -y;
-      - run: apt install nmap
+      - run: sudo apt update; apt upgrade -y;
+      - run: sudo apt install nmap
       - run: npm install --only=production
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
