@@ -4,8 +4,8 @@ FROM node:16
 # Create app directory
 WORKDIR /usr/src/app
 
-# RUN apt update
-# RUN apt upgrade -y
+RUN apt update
+RUN apt upgrade -y
 RUN apt install nmap -y
 
 # take the package.json only
