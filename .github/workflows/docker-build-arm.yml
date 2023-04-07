@@ -27,7 +27,7 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            nobio/nobmon-arm
+            nobio/nobmon
           # generate Docker tags based on the following events/attributes
           tags: |
             type=schedule
@@ -54,7 +54,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }}-arm
           platforms: linux/arm/v7
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
