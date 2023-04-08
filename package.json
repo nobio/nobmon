@@ -21,6 +21,7 @@
         "dotenv": "^10.0.0",
         "fritznode": "0.0.3",
         "mqtt": "^4.2.8",
+        "node-nmap": "^4.0.0",
         "ping": "^0.4.1"
     },
     "engines": {
