@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // configure from .env
 require('dotenv').config();
 
