@@ -25,7 +25,7 @@
         "ping": "^0.4.1"
     },
     "engines": {
-        "node": "^16"
+        "node": "^20"
     },
     "repository": {
         "type": "git",
