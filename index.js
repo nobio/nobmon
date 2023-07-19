@@ -26,7 +26,6 @@ const run = async () => {
     ['CPU MONITOR', process.env.CPU_MONITOR],
     ['MEMORY MONITOR', process.env.MEMORY_MONITOR],
     ['NMAP MONITOR', process.env.NMAP_MONITOR],
-
   ]);
 
   if (process.env.FRITZBOX_MONITOR === 'true') new FritzboxMonitor([influxDBHandler, mqttHandler]).run();
