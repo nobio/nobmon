@@ -12,6 +12,7 @@ const NOPHander = require('./lib/handler/nop-handler');
 const CPUMonitor = require('./lib/monitor/cpu-monitor');
 const MemoryMonitor = require('./lib/monitor/mem-monitor');
 const NMapMonitor = require('./lib/monitor/nmap-monitor');
+const SmartPlugPowerMonitor = require('./lib/monitor/smartplug-power-monitor');
 
 const run = async () => {
   const handlers = [];
@@ -31,6 +32,7 @@ const run = async () => {
     ['CPU MONITOR', process.env.CPU_MONITOR],
     ['MEMORY MONITOR', process.env.MEMORY_MONITOR],
     ['NMAP MONITOR', process.env.NMAP_MONITOR],
+    ['SMARTPLUG POWER MONITOR', process.env.SMARTPLUG_MONITOR],
   ]);
 
   if (process.env.FRITZBOX_MONITOR === 'true') new FritzboxMonitor(handlers).run();
@@ -40,6 +42,7 @@ const run = async () => {
   if (process.env.CPU_MONITOR === 'true') new CPUMonitor(handlers).run();
   if (process.env.MEMORY_MONITOR === 'true') new MemoryMonitor(handlers).run();
   if (process.env.NMAP_MONITOR === 'true') new NMapMonitor(handlers).run();
+  if (process.env.SMARTPLUG_MONITOR === 'true') new SmartPlugPowerMonitor(handlers).run();
 };
 
 run();
