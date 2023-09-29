@@ -13,13 +13,13 @@
         "eslint": "^8.15.0",
         "eslint-config-airbnb-base": "^15.0.0",
         "eslint-plugin-import": "^2.26.0",
-        "nodemon": "^2.0.6"
+        "nodemon": "^2.0.22"
     },
     "dependencies": {
-        "@influxdata/influxdb-client": "^1.15.0",
+        "@influxdata/influxdb3-client": "^0.2.0",
         "axios": "^0.24.0",
         "dotenv": "^10.0.0",
-        "fritznode": "0.0.3",
+        "fritznode": "^0.0.3",
         "mqtt": "^4.2.8",
         "node-nmap": "^4.0.0",
         "ping": "^0.4.1"
