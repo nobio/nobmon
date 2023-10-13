@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 // configure from .env
+const art = require('ascii-art');
 require('dotenv').config();
 
 const RaspiTempMonitor = require('./lib/monitor/raspitemp-monitor');
@@ -15,6 +16,9 @@ const NMapMonitor = require('./lib/monitor/nmap-monitor');
 const SmartPlugPowerMonitor = require('./lib/monitor/smartplug-power-monitor');
 
 const run = async () => {
+  const ascii = await art.font('nobio', 'doom');
+  console.log(ascii);
+
   const handlers = [];
   if (process.env.INFLUXDB_ENABLED === 'true') {
     handlers.push(new InfluxDBHandler());
