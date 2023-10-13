@@ -45,4 +45,11 @@ const run = async () => {
   if (process.env.SMARTPLUG_MONITOR === 'true') new SmartPlugPowerMonitor(handlers).run();
 };
 
+console.log(             ___.                          );
+console.log(  ____   ____\_ |__   _____   ____   ____  );
+console.log( /    \ /  _ \| __ \ /     \ /  _ \ /    \ );
+console.log(|   |  (  <_> ) \_\ \  Y Y  (  <_> )   |  \);
+console.log(|___|  /\____/|___  /__|_|  /\____/|___|  /);
+console.log(     \/           \/      \/            \/ );
+
 run();
