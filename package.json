@@ -3,6 +3,8 @@
     "version": "1.0.0",
     "author": "Gernot H. Reichel <gernot.reichel@me.com>",
     "private": true,
+    "main": "index.js",
+    "type": "module",
     "scripts": {
         "start": "node index",
         "start:dev": "node_modules/nodemon/bin/nodemon.js",

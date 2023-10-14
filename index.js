@@ -1,19 +1,21 @@
 /* eslint-disable no-unused-vars */
 // configure from .env
-const art = require('ascii-art');
-require('dotenv').config();
+import 'dotenv/config'
+//import dotenv from 'dotenv'; dotenv.config();
+//require('dotenv').config()
+import art from 'ascii-art';
 
-const RaspiTempMonitor = require('./lib/monitor/raspitemp-monitor');
-const FritzboxMonitor = require('./lib/monitor/fritz-monitor');
-const VeitsbronnWeatherMonitor = require('./lib/monitor/veitsbronn-weather-monitor');
-const PingMonitor = require('./lib/monitor/ping-monitor');
-const InfluxDBHandler = require('./lib/handler/influxdb-handler');
-const MQTTHander = require('./lib/handler/mqtt-handler');
-const NOPHander = require('./lib/handler/nop-handler');
-const CPUMonitor = require('./lib/monitor/cpu-monitor');
-const MemoryMonitor = require('./lib/monitor/mem-monitor');
-const NMapMonitor = require('./lib/monitor/nmap-monitor');
-const SmartPlugPowerMonitor = require('./lib/monitor/smartplug-power-monitor');
+import { RaspiTempMonitor } from './lib/monitor/raspitemp-monitor.js';
+import { FritzboxMonitor } from './lib/monitor/fritz-monitor.js';
+import { VeitsbronnWeatherMonitor } from './lib/monitor/veitsbronn-weather-monitor.js';
+import { PingMonitor } from './lib/monitor/ping-monitor.js';
+import { InfluxDBHandler } from './lib/handler/influxdb-handler.js';
+import { MQTTHander } from './lib/handler/mqtt-handler.js';
+import { NOPHander } from './lib/handler/nop-handler.js';
+import { CPUMonitor } from './lib/monitor/cpu-monitor.js';
+import { MemoryMonitor } from './lib/monitor/mem-monitor.js';
+import { NMapMonitor } from './lib/monitor/nmap-monitor.js';
+import { SmartPlugPowerMonitor } from './lib/monitor/smartplug-power-monitor.js';
 
 const run = async () => {
   const ascii = await art.font('nobio', 'doom');
