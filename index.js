@@ -1,8 +1,6 @@
 /* eslint-disable no-unused-vars */
 // configure from .env
 import 'dotenv/config'
-//import dotenv from 'dotenv'; dotenv.config();
-//require('dotenv').config()
 import art from 'ascii-art';
 
 import { RaspiTempMonitor } from './lib/monitor/raspitemp-monitor.js';
