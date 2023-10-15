@@ -3,6 +3,8 @@
     "version": "1.0.0",
     "author": "Gernot H. Reichel <gernot.reichel@me.com>",
     "private": true,
+    "main": "index.js",
+    "type": "module",
     "scripts": {
         "start": "node index",
         "start:dev": "node_modules/nodemon/bin/nodemon.js",
@@ -17,13 +19,13 @@
     },
     "dependencies": {
         "@influxdata/influxdb-client": "^1.15.0",
-        "ascii-art": "^2.8.5",
+        "ascii-art": "^1.5.1",
         "axios": "^0.24.0",
         "dotenv": "^10.0.0",
-        "fritznode": "0.0.3",
-        "mqtt": "^4.2.8",
+        "fritznode": "^0.0.3",
+        "mqtt": "^4.3.7",
         "node-nmap": "^4.0.0",
-        "ping": "^0.4.1"
+        "ping": "^0.4.4"
     },
     "engines": {
         "node": "^20"
