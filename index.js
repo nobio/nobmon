@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 // configure from .env
 import 'dotenv/config'
-import art from 'ascii-art';
 
 import { RaspiTempMonitor } from './lib/monitor/raspitemp-monitor.js';
 import { FritzboxMonitor } from './lib/monitor/fritz-monitor.js';
@@ -15,9 +14,9 @@ import { MemoryMonitor } from './lib/monitor/mem-monitor.js';
 import { NMapMonitor } from './lib/monitor/nmap-monitor.js';
 import { SmartPlugPowerMonitor } from './lib/monitor/smartplug-power-monitor.js';
 
+printMyTag();
+
 const run = async () => {
-  const ascii = await art.font('nobio', 'doom');
-  console.log(ascii);
 
   const handlers = [];
   if (process.env.INFLUXDB_ENABLED === 'true') {
@@ -50,3 +49,14 @@ const run = async () => {
 };
 
 run();
+
+function printMyTag() {
+  console.log(
+    "               _      _        " + '\n' +
+    "              | |    (_)       " + '\n' +
+    " _ __    ___  | |__   _   ___  " + '\n' +
+    "| '_ \\  / _ \\ | '_ \\ | | / _ \\ " + '\n' +
+    "| | | || (_) || |_) || || (_) |" + '\n' +
+    "|_| |_| \\___/ |_.__/ |_| \\___/ ") + '\n\n'
+
+};
