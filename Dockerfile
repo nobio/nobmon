@@ -12,7 +12,8 @@ RUN apt install nmap -y
 COPY package.json ./
 
 # install dependencies (but only those needed for production)
-RUN npm install --omit=dev
+#RUN npm install --omit=dev
+RUN npm install
 
 # Bundle app source
 COPY . .
