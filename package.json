@@ -19,7 +19,7 @@
     },
     "dependencies": {
         "@influxdata/influxdb-client": "^1.15.0",
-        "ascii-art": "^1.5.1",
+        "ascii-art": "^2.8.5",
         "axios": "^0.24.0",
         "dotenv": "^10.0.0",
         "fritznode": "^0.0.3",
