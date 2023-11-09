@@ -1,7 +1,5 @@
 #FROM node:18-alpine
 FROM node:16 AS base-image
-# switch to scratch
-FROM scratch
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -17,7 +15,9 @@ COPY package.json ./
 RUN npm install --omit=dev
 
 # Bundle app source
-COPY --from=base-image ./ ./
+#FROM scratch
+#COPY --from=base-image ./ ./
+COPY ./ ./
 
 
 CMD [ "npm", "start" ]
