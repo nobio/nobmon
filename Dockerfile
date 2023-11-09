@@ -1,5 +1,5 @@
 #FROM node:18-alpine
-FROM node:16
+FROM node:16 AS base-image
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -15,6 +15,7 @@ COPY package.json ./
 RUN npm install --omit=dev
 
 # Bundle app source
-COPY . .
+COPY --from=base-image ./ ./
+
 
 CMD [ "npm", "start" ]
