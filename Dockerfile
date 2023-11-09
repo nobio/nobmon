@@ -15,6 +15,7 @@ COPY package.json ./
 RUN npm install --omit=dev
 
 # Bundle app source
+FROM scratch
 COPY --from=base-image ./ ./
 
 
