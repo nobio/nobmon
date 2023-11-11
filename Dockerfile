@@ -19,7 +19,6 @@ COPY . .
 # switch to alpine
 ##FROM node:alpine
 RUN apk add nmap
-##RUN echo $(nmap)
 
 ##WORKDIR /usr/src/app
 ##COPY --from=base-image /usr/src/app /usr/src/app
