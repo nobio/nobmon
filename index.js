@@ -16,36 +16,49 @@ import { SmartPlugPowerMonitor } from './lib/monitor/smartplug-power-monitor.js'
 
 printMyTag();
 
+const {
+  FRITZBOX_MONITOR,
+  RASPITEMP_MONITOR,
+  VEITSBRONNWEATHER_MONITOR,
+  PING_MONITOR,
+  CPU_MONITOR,
+  MEMORY_MONITOR,
+  NMAP_MONITOR,
+  SMARTPLUG_MONITOR,
+  INFLUXDB_ENABLED,
+  MQTT_CLIENT_ENABLED,
+} = process.env
+
 const run = async () => {
 
   const handlers = [];
-  if (process.env.INFLUXDB_ENABLED === 'true') {
+  if (INFLUXDB_ENABLED === 'true') {
     handlers.push(new InfluxDBHandler());
   }
-  if (process.env.MQTT_CLIENT_ENABLED === 'true') {
+  if (MQTT_CLIENT_ENABLED === 'true') {
     handlers.push(new MQTTHander());
   }
   // const mqttHandler = new NOPHander();
 
   console.table([
-    ['FRITZBOX MONITOR', process.env.FRITZBOX_MONITOR],
-    ['RASPITEMP MONITOR', process.env.RASPITEMP_MONITOR],
-    ['VEITSBRONNWEATHER MONITOR', process.env.VEITSBRONNWEATHER_MONITOR],
-    ['PING MONITOR', process.env.PING_MONITOR],
-    ['CPU MONITOR', process.env.CPU_MONITOR],
-    ['MEMORY MONITOR', process.env.MEMORY_MONITOR],
-    ['NMAP MONITOR', process.env.NMAP_MONITOR],
-    ['SMARTPLUG POWER MONITOR', process.env.SMARTPLUG_MONITOR],
+    ['FRITZBOX MONITOR', FRITZBOX_MONITOR],
+    ['RASPITEMP MONITOR', RASPITEMP_MONITOR],
+    ['VEITSBRONNWEATHER MONITOR', VEITSBRONNWEATHER_MONITOR],
+    ['PING MONITOR', PING_MONITOR],
+    ['CPU MONITOR', CPU_MONITOR],
+    ['MEMORY MONITOR', MEMORY_MONITOR],
+    ['NMAP MONITOR', NMAP_MONITOR],
+    ['SMARTPLUG POWER MONITOR', SMARTPLUG_MONITOR],
   ]);
 
-  if (process.env.FRITZBOX_MONITOR === 'true') new FritzboxMonitor(handlers).run();
-  if (process.env.RASPITEMP_MONITOR === 'true') new RaspiTempMonitor(handlers).run();
-  if (process.env.VEITSBRONNWEATHER_MONITOR === 'true') new VeitsbronnWeatherMonitor(handlers).run();
-  if (process.env.PING_MONITOR === 'true') new PingMonitor(handlers).run();
-  if (process.env.CPU_MONITOR === 'true') new CPUMonitor(handlers).run();
-  if (process.env.MEMORY_MONITOR === 'true') new MemoryMonitor(handlers).run();
-  if (process.env.NMAP_MONITOR === 'true') new NMapMonitor(handlers).run();
-  if (process.env.SMARTPLUG_MONITOR === 'true') new SmartPlugPowerMonitor(handlers).run();
+  if (FRITZBOX_MONITOR === 'true') new FritzboxMonitor(handlers).run();
+  if (RASPITEMP_MONITOR === 'true') new RaspiTempMonitor(handlers).run();
+  if (VEITSBRONNWEATHER_MONITOR === 'true') new VeitsbronnWeatherMonitor(handlers).run();
+  if (PING_MONITOR === 'true') new PingMonitor(handlers).run();
+  if (CPU_MONITOR === 'true') new CPUMonitor(handlers).run();
+  if (MEMORY_MONITOR === 'true') new MemoryMonitor(handlers).run();
+  if (NMAP_MONITOR === 'true') new NMapMonitor(handlers).run();
+  if (SMARTPLUG_MONITOR === 'true') new SmartPlugPowerMonitor(handlers).run();
 };
 
 run();
