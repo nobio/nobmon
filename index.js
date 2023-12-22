@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 // configure from .env
-import 'dotenv/config'
+import 'dotenv/config';
 
 import { RaspiTempMonitor } from './lib/monitor/raspitemp-monitor.js';
 import { FritzboxMonitor } from './lib/monitor/fritz-monitor.js';
@@ -27,10 +27,9 @@ const {
   SMARTPLUG_MONITOR,
   INFLUXDB_ENABLED,
   MQTT_CLIENT_ENABLED,
-} = process.env
+} = process.env;
 
 const run = async () => {
-
   const handlers = [];
   if (INFLUXDB_ENABLED === 'true') {
     handlers.push(new InfluxDBHandler());
@@ -65,11 +64,12 @@ run();
 
 function printMyTag() {
   console.log(
-    "               _      _        " + '\n' +
-    "              | |    (_)       " + '\n' +
-    " _ __    ___  | |__   _   ___  " + '\n' +
-    "| '_ \\  / _ \\ | '_ \\ | | / _ \\ " + '\n' +
-    "| | | || (_) || |_) || || (_) |" + '\n' +
-    "|_| |_| \\___/ |_.__/ |_| \\___/ ");
-  console.log()
-};
+    '             _      _          ' + '\n'
+    + '              | |    (_)       ' + '\n'
+    + ' _ __    ___  | |__   _   ___  ' + '\n'
+    + "| '_ \\  / _ \\ | '_ \\ | | / _ \\ " + '\n'
+    + '| | | || (_) || |_) || || (_) |' + '\n'
+    + '|_| |_| \\___/ |_.__/ |_| \\___/ ',
+  );
+  console.log();
+}
