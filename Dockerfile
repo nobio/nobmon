@@ -5,9 +5,7 @@ FROM node:18-alpine AS base-image
 # Create app directory
 WORKDIR /usr/src/app
 
-#RUN apt update; \
-#    apt upgrade -y; \
-#    apt install nmap -y
+RUN apk --no-cache add curl
 
 # take the package.json only
 COPY package.json ./
