@@ -12,19 +12,21 @@
         "lint": "eslint"
     },
     "devDependencies": {
-        "eslint": "^8.53.0",
+        "eslint": "^8.56.0",
         "eslint-config-airbnb-base": "^15.0.0",
-        "eslint-plugin-import": "^2.29.0",
-        "nodemon": "^3.0.1"
+        "eslint-config-standard": "^17.1.0",
+        "eslint-plugin-import": "^2.29.1",
+        "nodemon": "^3.0.2"
     },
     "dependencies": {
         "@influxdata/influxdb-client": "^1.33.2",
         "axios": "^1.6.1",
         "dotenv": "^16.3.1",
-        "fritznode": "^0.0.5",
+        "import": "^0.0.6",
         "mqtt": "^5.2.1",
         "node-nmap": "^4.0.0",
-        "ping": "^0.4.4"
+        "ping": "^0.4.4",
+        "xml2js": "^0.6.2"
     },
     "engines": {
         "node": "^20"
