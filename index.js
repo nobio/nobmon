@@ -1,3 +1,6 @@
+/* eslint-disable no-useless-concat */
+/* eslint-disable no-console */
+/* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 // configure from .env
 import 'dotenv/config';
@@ -13,8 +16,6 @@ import { CPUMonitor } from './lib/monitor/cpu-monitor.js';
 import { MemoryMonitor } from './lib/monitor/mem-monitor.js';
 import { NMapMonitor } from './lib/monitor/nmap-monitor.js';
 import { SmartPlugPowerMonitor } from './lib/monitor/smartplug-power-monitor.js';
-
-printMyTag();
 
 const {
   FRITZBOX_MONITOR,
@@ -60,11 +61,9 @@ const run = async () => {
   if (SMARTPLUG_MONITOR === 'true') new SmartPlugPowerMonitor(handlers).run();
 };
 
-run();
-
 function printMyTag() {
   console.log(
-    '             _      _          ' + '\n'
+    '               _      _          ' + '\n'
     + '              | |    (_)       ' + '\n'
     + ' _ __    ___  | |__   _   ___  ' + '\n'
     + "| '_ \\  / _ \\ | '_ \\ | | / _ \\ " + '\n'
@@ -73,3 +72,6 @@ function printMyTag() {
   );
   console.log();
 }
+
+printMyTag();
+run();
