@@ -7,7 +7,7 @@ import 'dotenv/config';
 
 import { RaspiTempMonitor } from './lib/monitor/raspitemp-monitor.js';
 import { FritzboxMonitor } from './lib/monitor/fritz-monitor.js';
-import { VeitsbronnWeatherMonitor } from './lib/monitor/veitsbronn-weather-monitor.js';
+import { WeatherMonitor } from './lib/monitor/weather-monitor.js';
 import { PingMonitor } from './lib/monitor/ping-monitor.js';
 import { InfluxDBHandler } from './lib/handler/influxdb-handler.js';
 import { MQTTHander } from './lib/handler/mqtt-handler.js';
@@ -20,7 +20,7 @@ import { SmartPlugPowerMonitor } from './lib/monitor/smartplug-power-monitor.js'
 const {
   FRITZBOX_MONITOR,
   RASPITEMP_MONITOR,
-  VEITSBRONNWEATHER_MONITOR,
+  WEATHER_MONITOR,
   PING_MONITOR,
   CPU_MONITOR,
   MEMORY_MONITOR,
@@ -43,7 +43,7 @@ const run = async () => {
   console.table([
     ['FRITZBOX MONITOR', FRITZBOX_MONITOR, process.env.FRITZ_DELAY],
     ['RASPITEMP MONITOR', RASPITEMP_MONITOR, process.env.TEMP_DELAY],
-    ['VEITSBRONNWEATHER MONITOR', VEITSBRONNWEATHER_MONITOR, process.env.OWM_VEITSBRONN_DELAY],
+    ['WEATHER MONITOR', WEATHER_MONITOR, process.env.OWM_DELAY],
     ['PING MONITOR', PING_MONITOR, process.env.PING_DELAY],
     ['CPU MONITOR', CPU_MONITOR, process.env.CPU_DELAY],
     ['MEMORY MONITOR', MEMORY_MONITOR, process.env.MEM_DELAY],
@@ -53,7 +53,7 @@ const run = async () => {
 
   if (FRITZBOX_MONITOR === 'true') new FritzboxMonitor(handlers).run();
   if (RASPITEMP_MONITOR === 'true') new RaspiTempMonitor(handlers).run();
-  if (VEITSBRONNWEATHER_MONITOR === 'true') new VeitsbronnWeatherMonitor(handlers).run();
+  if (WEATHER_MONITOR === 'true') new WeatherMonitor(handlers).run();
   if (PING_MONITOR === 'true') new PingMonitor(handlers).run();
   if (CPU_MONITOR === 'true') new CPUMonitor(handlers).run();
   if (MEMORY_MONITOR === 'true') new MemoryMonitor(handlers).run();
