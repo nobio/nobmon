@@ -1,0 +1,20 @@
+services:
+  nobmon:
+    container_name: nobmon
+    image: nobio/nobmon:master-arm
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    networks:
+      - network-nobio
+    env_file:
+      - .env
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# network definition
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+networks:
+  network-nobio:
+    driver: bridge
+    name: nobio-network
+    
