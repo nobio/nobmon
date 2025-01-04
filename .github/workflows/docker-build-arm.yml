@@ -10,7 +10,7 @@ on:
     branches: [master]
 
 jobs:
-  build:
+  build-armv7:
     runs-on: ubuntu-latest
 
     strategy:

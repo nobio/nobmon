@@ -4,6 +4,7 @@
 /* eslint-disable no-unused-vars */
 // configure from .env
 import 'dotenv/config';
+import figlet from 'figlet';
 
 import { RaspiTempMonitor } from './lib/monitor/raspitemp-monitor.js';
 import { FritzboxMonitor } from './lib/monitor/fritz-monitor.js';
@@ -29,6 +30,8 @@ const {
   INFLUXDB_ENABLED,
   MQTT_CLIENT_ENABLED,
 } = process.env;
+
+figlet('-- nobmon --', (err, asciiArt) => { console.log(asciiArt); });
 
 const run = async () => {
   const handlers = [];
@@ -61,17 +64,4 @@ const run = async () => {
   if (SMARTPLUG_MONITOR === 'true') new SmartPlugPowerMonitor(handlers).run();
 };
 
-function printMyTag() {
-  console.log(
-    '               _      _          ' + '\n'
-    + '              | |    (_)       ' + '\n'
-    + ' _ __    ___  | |__   _   ___  ' + '\n'
-    + "| '_ \\  / _ \\ | '_ \\ | | / _ \\ " + '\n'
-    + '| | | || (_) || |_) || || (_) |' + '\n'
-    + '|_| |_| \\___/ |_.__/ |_| \\___/ ',
-  );
-  console.log();
-}
-
-printMyTag();
 run();
