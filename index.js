@@ -29,9 +29,10 @@ const {
   SMARTPLUG_MONITOR,
   INFLUXDB_ENABLED,
   MQTT_CLIENT_ENABLED,
+  MAC_CPU_MONITOR,
 } = process.env;
 
-figlet('-- nobmon --', (err, asciiArt) => { console.log(asciiArt); });
+console.log(figlet.textSync('nobmon'));
 
 const run = async () => {
   const handlers = [];
