@@ -11,6 +11,7 @@ import { FritzboxMonitor } from './lib/monitor/fritz-monitor.js';
 import { WeatherMonitor } from './lib/monitor/weather-monitor.js';
 import { PingMonitor } from './lib/monitor/ping-monitor.js';
 import { InfluxDBHandler } from './lib/handler/influxdb-handler.js';
+import { InfluxDBHandler2 } from './lib/handler/influxdb-handler2.js';
 import { MQTTHander } from './lib/handler/mqtt-handler.js';
 import { NOPHander } from './lib/handler/nop-handler.js';
 import { CPUMonitor } from './lib/monitor/cpu-monitor.js';
@@ -18,6 +19,7 @@ import { MemoryMonitor } from './lib/monitor/mem-monitor.js';
 import { NMapMonitor } from './lib/monitor/nmap-monitor.js';
 import { SmartPlugPowerMonitor } from './lib/monitor/smartplug-power-monitor.js';
 import { FuelPriceMonitor } from './lib/monitor/fuelprice-monitor.js';
+import { ConsoleLogHandler } from './lib/handler/consolelog-handler.js';
 
 const {
   FRITZBOX_MONITOR,
@@ -29,8 +31,10 @@ const {
   NMAP_MONITOR,
   SMARTPLUG_MONITOR,
   INFLUXDB_ENABLED,
+  INFLUXDB2_ENABLED,
   MQTT_CLIENT_ENABLED,
   FUEL_PRICE_MONITOR,
+  CONSOLELOG_ENABLED,
 } = process.env;
 
 console.log(figlet.textSync('nobmon'));
@@ -40,8 +44,14 @@ const run = async () => {
   if (INFLUXDB_ENABLED === 'true') {
     handlers.push(new InfluxDBHandler());
   }
+  if (INFLUXDB2_ENABLED === 'true') {
+    handlers.push(new InfluxDBHandler2());
+  }
   if (MQTT_CLIENT_ENABLED === 'true') {
     handlers.push(new MQTTHander());
+  }
+  if (CONSOLELOG_ENABLED === 'true') {
+    handlers.push(new ConsoleLogHandler());
   }
   // const mqttHandler = new NOPHander();
 
