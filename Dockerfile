@@ -1,6 +1,7 @@
 #FROM node:18-alpine
 #FROM node:16 AS base-image
-FROM node:24-alpine AS base-image
+#FROM node:24-alpine AS base-image
+FROM node:lts-alpine3.22 AS base-image
 
 # Create app directory
 WORKDIR /usr/src/app
