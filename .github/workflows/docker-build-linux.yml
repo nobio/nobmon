@@ -83,9 +83,9 @@ jobs:
           SERVER_USER: ${{secrets.HETZNER_USER}}
           SERVER: ${{secrets.HETZNER_SERVER}}
           REPO_NAME: ${{ github.event.repository.name }}
-          APP_DIR: /home/nobioX/container/nobmon
+          APP_DIR: /home/nobio/container/nobmon
         run: |
           ssh -o StrictHostKeyChecking=no -i $SSH_KEY_PATH $SERVER_USER@$SERVER "
-          cd /home/nobioY/container/nobmon &&
+          cd /home/nobio/container/nobmon &&
           docker-compose pull && docker-compose up -d --remove-orphans  
           "
