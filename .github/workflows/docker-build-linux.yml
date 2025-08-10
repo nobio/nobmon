@@ -86,6 +86,6 @@ jobs:
           APP_DIR: /home/nobio/container/nobmon
         run: |
           ssh -o StrictHostKeyChecking=no -i $SSH_KEY_PATH $SERVER_USER@$SERVER "
-          cd /home/nobio/container/nobmon &&
+          cd /home/nobio/container/$REPO_NAME &&
           docker-compose pull && docker-compose up -d --remove-orphans  
           "
