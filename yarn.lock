@@ -1654,10 +1654,10 @@ picomatch@^2.0.4, picomatch@^2.2.1:
   resolved "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
 
-ping@^0.4.4:
-  version "0.4.4"
-  resolved "https://registry.npmjs.org/ping/-/ping-0.4.4.tgz"
-  integrity sha512-56ZMC0j7SCsMMLdOoUg12VZCfj/+ZO+yfOSjaNCRrmZZr6GLbN2X/Ui56T15dI8NhiHckaw5X2pvyfAomanwqQ==
+ping@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ping/-/ping-1.0.0.tgz#5347397c356d44778e8261194de6dbcc2c3db0c4"
+  integrity sha512-3dxdgGtV+7P/EVo42JhkGSomeO/0GGicSz3mI/yK+AI+VGNAOfakw5XfcbGI4IjyBY+ZZwvuRXdhnNF2uliKew==
 
 possible-typed-array-names@^1.0.0:
   version "1.1.0"
