@@ -22,7 +22,7 @@
         "@influxdata/influxdb-client": "^1.35.0",
         "axios": "^1.13.1",
         "dotenv": "^17.2.1",
-        "figlet": "^1.8.1",
+        "figlet": "^1.9.4",
         "import": "^0.0.6",
         "mqtt": "^5.13.0",
         "node-nmap": "^4.0.0",
