@@ -1,9 +1,9 @@
-FROM node:26-alpine AS base-image
+FROM node:26-bookworm AS base-image
 
 # Create app directory
 WORKDIR /usr/src/app
 
-RUN apk --no-cache add curl
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
 # take the package.json only
 COPY package.json ./
@@ -12,9 +12,9 @@ COPY package.json ./
 RUN npm install --omit=dev
 COPY . .
 
-# switch to alpine
-##FROM node:alpine
-RUN apk add nmap
+# switch to debian
+##FROM node:bookworm
+RUN apt-get update && apt-get install -y nmap && rm -rf /var/lib/apt/lists/*
 
 ##WORKDIR /usr/src/app
 ##COPY --from=base-image /usr/src/app /usr/src/app
