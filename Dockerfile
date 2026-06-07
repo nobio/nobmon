@@ -1,5 +1,5 @@
-# 22 is LTS version. For arm7 32bit there is no newer version available, so we will use 22 for all builds
-FROM node:22-bookworm AS base-image # LTS
+# 20 is LTS version. For arm7 32bit there is no newer version available, so we will use 22 for all builds
+FROM node:20-alpine AS base-image
 
 # Create app directory
 WORKDIR /usr/src/app
