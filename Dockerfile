@@ -1,4 +1,5 @@
-FROM node:26-bookworm AS base-image
+# 22 is LTS version. For arm7 32bit there is no newer version available, so we will use 22 for all builds
+FROM node:22-bookworm AS base-image # LTS
 
 # Create app directory
 WORKDIR /usr/src/app
