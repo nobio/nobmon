@@ -1,7 +1,3 @@
-/* eslint-disable no-useless-concat */
-/* eslint-disable no-console */
-/* eslint-disable import/extensions */
-/* eslint-disable no-unused-vars */
 // configure from .env
 import 'dotenv/config';
 import figlet from 'figlet';

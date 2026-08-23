@@ -12,10 +12,8 @@
         "lint": "eslint"
     },
     "devDependencies": {
-        "eslint": "^10.6.0",
-        "eslint-config-airbnb-base": "^15.0.0",
-        "eslint-config-standard": "^17.1.0",
-        "eslint-plugin-import": "^2.32.0",
+        "eslint": "^10.9.0",
+        "eslint-plugin-jsdoc": "^64.2.1",
         "nodemon": "^3.1.14"
     },
     "dependencies": {
