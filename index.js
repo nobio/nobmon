@@ -37,18 +37,11 @@ console.log(figlet.textSync('nobmon'));
 
 const run = async () => {
   const handlers = [];
-  if (INFLUXDB_ENABLED === 'true') {
-    handlers.push(new InfluxDBHandler());
-  }
-  if (INFLUXDB2_ENABLED === 'true') {
-    handlers.push(new InfluxDBHandler2());
-  }
-  if (MQTT_CLIENT_ENABLED === 'true') {
-    handlers.push(new MQTTHander());
-  }
-  if (CONSOLELOG_ENABLED === 'true') {
-    handlers.push(new ConsoleLogHandler());
-  }
+  if (INFLUXDB_ENABLED === 'true') handlers.push(new InfluxDBHandler());
+  if (INFLUXDB2_ENABLED === 'true') handlers.push(new InfluxDBHandler2());
+  if (MQTT_CLIENT_ENABLED === 'true') handlers.push(new MQTTHander());
+  if (CONSOLELOG_ENABLED === 'true') handlers.push(new ConsoleLogHandler());
+console.log(handlers);
   // const mqttHandler = new NOPHander();
 
   console.table([
