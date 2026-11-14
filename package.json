@@ -28,7 +28,7 @@
         "xml2js": "^0.6.2"
     },
     "engines": {
-        "node": "^25"
+        "node": "^26"
     },
     "repository": {
         "type": "git",
